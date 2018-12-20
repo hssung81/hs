@@ -15,3 +15,5 @@ export EC2_CERT=${EC2_KEY_DIR}/cert.pem
 export PATH=$PATH:$EC2_HOME/bin
 
 export EDITOR=vim
+
+alias python_ctags="ctags -R --fields=+l --languages=python --python-kinds=-iv -f ./tags . $(python -c "import os, sys; print(' '.join('{}'.format(d) for d in sys.path if os.path.isdir(d)))")"
