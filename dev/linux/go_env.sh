@@ -33,3 +33,11 @@ git clone https://github.com/fatih/vim-go.git
 apt-get install mercurial -y
 
 vim -c 'GoInstallBinaries' -c 'qa!'
+
+apt-get install python3-dev cmake
+
+cd ~/.vim/bundle
+git clone https://github.com/Valloric/YouCompleteMe.git
+cd YouCompleteMe
+git submodule update --init --recursive
+./install.sh
