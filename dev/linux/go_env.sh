@@ -22,7 +22,12 @@ bdate=`date +"%Y%m%d"`
 mv ~/.vimrc ~/.vimrc_$bdate
 echo "execute pathogen#infect()
 syntax on
-filetype plugin indent on" > ~/.vimrc
+filetype plugin indent on
+set mouse=a
+map <C-l> :TagbarToggle<CR>
+map <C-k> :NERDTreeToggle<CR>
+map <C-m> :set mouse=a<CR>
+map <C-n> :set mouse-=a<CR>" > ~/.vimrc
 
 mkdir ~/.vim/bundle
 
@@ -41,3 +46,10 @@ git clone https://github.com/Valloric/YouCompleteMe.git
 cd YouCompleteMe
 git submodule update --init --recursive
 ./install.sh
+
+apt-get install ctags
+cd ~/.vim/bundle
+git clone https://github.com/majutsushi/tagbar.git
+
+cd ~/.vim/bundle
+git clone https://github.com/scrooloose/nerdtree.git 
